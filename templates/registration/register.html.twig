@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rejestracja{% endblock %}
+
+{% block body %}
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    
+    <div class="container-fluid">
+        <div class="row">                   
+            <div class="col mainbg">
+                <div class="d-inline-block">
+                    <a href="{{ path('welcome') }}">
+                     
+                        {{ include ('_logo.html.twig') }}
+                         
+                         {# <img class="logo" src="/css/logo.png" width="90" height="90" alt=""/> #}
+                    </a>
+                </div>
+
+                <div class="col title">
+                    <h1>Aby załoyć konto,<br/>uzupełnij ponisze dane.</h1>
+                </div>
+
+                {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.name) }}
+                    {{ form_row(registrationForm.lastName) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+                    {{ form_row(registrationForm.agreeTerms) }}
+
+                    <button type="submit" class="btn">Register</button>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

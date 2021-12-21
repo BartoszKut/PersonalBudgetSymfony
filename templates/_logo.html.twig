@@ -1,0 +1,16 @@
+{% apply inline_css %}
+<style>
+    img {  
+        background-color: #e4e4e4;
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 90px;
+        height: 90px;
+        -webkit-box-shadow: 5px 5px 13px 1px rgba(160, 156, 156, 0.33);
+        -moz-box-shadow:    5px 5px 13px 1px rgba(160, 156, 156, 0.33);
+        box-shadow:         5px 5px 13px 1px rgba(160, 156, 156, 0.33);
+    }
+
+</style>
+    <img src="{{ asset('images/logo.png') }}" alt="" class="logo"/>
+{% endapply %}
